@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgf1yw4bw6v1d"]
+
+[ext_resource type="Script" uid="uid://dlrn5517dk64b" path="res://godot-scripts/example_heartgold.gd" id="1_08apm"]
+
+[node name="HeartGold" type="Node2D"]
+script = ExtResource("1_08apm")
