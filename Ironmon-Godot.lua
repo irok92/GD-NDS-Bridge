@@ -3,18 +3,18 @@
 
 IronmonTracker = {}
 
-local WatcherService = { name = "Watcher" }
+local WindowManager = { name = "WindowManager" }
 
-function WatcherService:onUpdate()
+function WindowManager:onUpdate()
 	-- Update logic for the watcher service,happens every emu.frameadvance()
 end
 
-function WatcherService:set_framelimit(sender, data)
+function WindowManager:set_framelimit(sender, data)
 	emu.limitframerate(data.enabled and true or false)
 	Godot.sendMessage(sender, "framelimit_changed", { enabled = data.enabled });
 end
 
-function WatcherService:close(sender, data)
+function WindowManager:close(sender, data)
 	Godot.sendMessage(sender, "closing", {})
 	client.exit()
 end
@@ -27,10 +27,6 @@ function IronmonTracker.startTracker()
 	
 	local main = Main()
 	
-	local watcher = { name = "Watcher" }
-
-
-
 	Godot.addService(WatcherService)
 
 	main.run()
